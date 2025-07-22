@@ -41,6 +41,11 @@ def contar_letra(palabra, letra):
         else:
             return 0 + contar_letra(palabra[1:], letra)
 
+def invertir_cadena(cadena):
+    if len(cadena) == 0:
+        return ""
+    else:
+        return cadena[-1] + invertir_cadena(cadena[:-1])
 
 while True:
     print("\n*** MENU PRINCIPAL ***")
@@ -59,8 +64,10 @@ while True:
 
     elif opcion == "2":
         print(f"Resultado: {suma_primeros_n(pedir_numero())}")
+
     elif opcion == "3":
         print(f"Resultado: {fibonacci(pedir_numero())}")
+
     elif opcion == "4":
         palabra = input("Ingrese una palabra: ")
 
@@ -71,13 +78,19 @@ while True:
             else:
                 print("Por favor, ingrese solo una letra")
 
-        print(f"Resultado: {contar_letra(palabra, letra)} veces la letra '{letra}' en la palabra '{palabra}'.")
+        print(f"Resultado: {contar_letra(palabra, letra)}")
+
     elif opcion == "5":
-        print()
+        cadena = input("Ingrese una cadena de texto: ")
+
+        print(f"Resultado: {invertir_cadena(cadena)}")
+
     elif opcion == "6":
         print()
+
     elif opcion == "0":
         print("Saliendo del programa...")
         break
+
     else:
         print("Opción no válida, por favor intente de nuevo.")

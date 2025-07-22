@@ -1,8 +1,29 @@
+def pedir_numero():
+    num = 0
+
+    while True:
+        try:
+            num = int(input("Ingrese un número entero positivo para calcular su factorial: "))
+            if num >= 0:
+                break
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+    return num
+
 def factorial(n):
     if n == 0 or n == 1:
         return 1
     else:
         return n * factorial(n - 1)
+
+def suma_primeros_n(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + suma_primeros_n(n - 1)
+
+
 
 while True:
     print("\n*** MENU PRINCIPAL ***")
@@ -17,17 +38,9 @@ while True:
     opcion = input("Seleccione una opción: ")
 
     if opcion == "1":
-        num = 0
+        print(f"Resultado: {factorial(pedir_numero())}")
 
-        while True:
-            try:
-                num = int(input("Ingrese un número entero positivo para calcular su factorial: "))
-                if num >= 0:
-                    break
-            except ValueError:
-                print("Por favor, ingrese un número válido.")
-
-        factorial = factorial(num)
-
-    if opcion == "2":
-        num = 0
+    elif opcion == "2":
+        print(f"Resultado: {suma_primeros_n(pedir_numero())}")
+    elif opcion == "3":
+        print()

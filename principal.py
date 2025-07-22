@@ -31,6 +31,17 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
+
+def contar_letra(palabra, letra):
+    if not palabra:
+        return 0
+    else:
+        if palabra[0] == letra:
+            return 1 + contar_letra(palabra[1:], letra)
+        else:
+            return 0 + contar_letra(palabra[1:], letra)
+
+
 while True:
     print("\n*** MENU PRINCIPAL ***")
     print("1 - Factorial")
@@ -51,7 +62,16 @@ while True:
     elif opcion == "3":
         print(f"Resultado: {fibonacci(pedir_numero())}")
     elif opcion == "4":
-        print()
+        palabra = input("Ingrese una palabra: ")
+
+        while True:
+            letra = input("Ingrese la letra a contar: ")
+            if len(letra) == 1:
+                break
+            else:
+                print("Por favor, ingrese solo una letra")
+
+        print(f"Resultado: {contar_letra(palabra, letra)} veces la letra '{letra}' en la palabra '{palabra}'.")
     elif opcion == "5":
         print()
     elif opcion == "6":

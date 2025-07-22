@@ -23,7 +23,13 @@ def suma_primeros_n(n):
     else:
         return n + suma_primeros_n(n - 1)
 
-
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 while True:
     print("\n*** MENU PRINCIPAL ***")
@@ -43,4 +49,6 @@ while True:
     elif opcion == "2":
         print(f"Resultado: {suma_primeros_n(pedir_numero())}")
     elif opcion == "3":
+        print(f"Resultado: {fibonacci(pedir_numero())}")
+    elif opcion == "4":
         print()

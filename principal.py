@@ -47,6 +47,14 @@ def invertir_cadena(cadena):
     else:
         return cadena[-1] + invertir_cadena(cadena[:-1])
 
+def calcular_potencia(base, exponente):
+    if exponente == 0:
+        return 1
+    elif exponente < 0:
+        return 1 / calcular_potencia(base, -exponente)
+    else:
+        return base * calcular_potencia(base, exponente - 1)
+
 while True:
     print("\n*** MENU PRINCIPAL ***")
     print("1 - Factorial")
@@ -86,7 +94,18 @@ while True:
         print(f"Resultado: {invertir_cadena(cadena)}")
 
     elif opcion == "6":
-        print()
+        base = 0
+        exponente = 0
+
+        while True:
+            try:
+                base = int(input("Ingrese la base: "))
+                exponente = int(input("Ingrese el exponente: "))
+                break
+            except ValueError:
+                print("Por favor, ingrese números enteros válidos.")
+
+        print(f"Resultado: {calcular_potencia(base, exponente)}")
 
     elif opcion == "0":
         print("Saliendo del programa...")

@@ -52,3 +52,12 @@ while True:
         print(f"Resultado: {fibonacci(pedir_numero())}")
     elif opcion == "4":
         print()
+    elif opcion == "5":
+        print()
+    elif opcion == "6":
+        print()
+    elif opcion == "0":
+        print("Saliendo del programa...")
+        break
+    else:
+        print("Opción no válida, por favor intente de nuevo.")
